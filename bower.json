@@ -18,21 +18,17 @@
     "paper-item": "PolymerElements/paper-item#2.0-preview",
     "paper-listbox": "PolymerElements/paper-listbox#2.0-preview",
     "paper-menu-button": "PolymerElements/paper-menu-button#2.0-preview",
-    "polymer": "polymer/polymer#2.0-preview",
-    "paper-button": "PolymerElements/paper-button#2.0-preview"
-  },
-  "variants": {
-    "1.x": {
-      "dependencies": {
-        "polymer": "polymer/polymer#^1.7.1"
-      },
-      "resolutions": {
-        "webcomponentsjs": "^0.7.0",
-        "polymer": "^1.7.1"
-      }
-    }
+    "paper-button": "PolymerElements/paper-button#2.0-preview",
+    "paper-dialog": "PolymerElements/paper-dialog#2.0-preview",
+    "paper-fab": "PolymerElements/paper-fab#2.0-preview",
+    "polymer": "Polymer/polymer#^2.0.0-rc.1",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.4"
   },
   "resolutions": {
-    "polymer": "2.0-data-updates"
-  }
+    "polymer": "^2.0.0-rc.1"
+  },
+  "devDependencies": {
+    "web-component-tester": "6.0.0-prerelease.5"
+  },
+  "private": true
 }

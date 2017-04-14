@@ -26,7 +26,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="../bower_components/app-layout/app-scroll-position/app-scroll-position.html">
 
 <link rel="import" href="../bower_components/paper-styles/color.html">
 
@@ -154,10 +153,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </app-header-layout>
       </app-drawer>
 
-      <app-scroll-position
-          selected="[[_pageData.page]]"
-          reset="[[_isDetailPage(_pageData.page)]]"></app-scroll-position>
-
       <!-- list/detail pages -->
       <iron-pages selected="[[_pageData.page]]" attr-for-selected="name">
 
@@ -202,9 +197,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _subRoute: Object,
 
-      _pageData: Object,
+      _pageData: {
+        type: Object,
+        observer: '_pageDataChanged'
+      },
 
-      _idData: Object
+      _selectedPage: String,
+
+      _idData: Object,
+
+      _scrollPositionMap: {
+        type: Object,
+        value: function() {
+          return {};
+        }
+      }
 
     },
 
@@ -214,10 +221,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this.set('_route.path', '/home');
         }
       });
-    },
-
-    _isDetailPage: function(page) {
-      return page === 'detail';
     },
 
     _getProject: function() {
@@ -234,7 +237,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     _drawerSelected: function() {
       if (!this.$.drawer.persistent) this.$.drawer.close();
-    }
+    },
+
+    /**
+    * Preserves the document scroll position, so
+    * it can be restored when returning to a page.
+    */
+   _pageDataChanged: function(pageData, oldPageData) {
+     var map = this._scrollPositionMap;
+
+     if (oldPageData != null && oldPageData.page != null) {
+       map[oldPageData.page] = window.pageYOffset;
+     }
+     this._selectedPage = pageData.page;
+     if (map[pageData.page] != null) {
+       Polymer.AppLayout.scroll({ top: map[pageData.page], behavior: 'silent' });
+     } else if (this.isAttached) {
+       Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });
+     }
+   }
 
   });
 
