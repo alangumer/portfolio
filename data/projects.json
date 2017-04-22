@@ -1,7 +1,13 @@
 [
   {
-
-    "id": "1",
+    "name": "AudioVerse Alexa Skill",
+    "company": "AudioVerse",
+    "date": "June 14 2015",
+    "imageUrl": "img/av-alexa/01.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
+    "images": [ "img/av-alexa/01.png" ]
+  },
+  {
     "name": "Media Upload Manager",
     "company": "AudioVerse",
     "date": "June 14 2015",
@@ -10,7 +16,6 @@
     "images": [ "img/av-mum/01.png", "img/av-mum/02.png" ]
   },
   {
-    "id": "2",
     "name": "AudioVerse Android App",
     "company": "AudioVerse",
     "date": "June 14 2015",
@@ -19,12 +24,11 @@
     "images": [ "img/av-android/01.webp", "img/av-android/02.webp", "img/av-android/03.webp", "img/av-android/04.webp", "img/av-android/05.webp" ]
   },
   {
-    "id": "3",
     "name": "AudioVerse iOS App",
     "company": "AudioVerse",
     "date": "June 14 2015",
     "imageUrl": "img/av-ios/01.jpeg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
-    "images": [ "img/av-ios/01.jpeg", "img/av-ios/02.jpeg", "img/av-ios/03.jpeg", "img/av-ios/04.jpeg", "img/av-ios/05.jpeg" ]
+    "images": [ "img/av-ios/01.jpeg", "img/av-ios/02.jpeg", "img/av-ios/03.jpeg", "img/av-ios/04.jpeg" ]
   }
 ]

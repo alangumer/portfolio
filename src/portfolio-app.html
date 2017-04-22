@@ -68,7 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .contact-info {
       margin: 0 20px;
       padding-bottom: 20px;
-      border-bottom: 1px solid #CCC;
+      /*border-bottom: 1px solid #CCC;*/
       text-align: center;
     }
 
@@ -143,8 +143,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div class="contact-info">
               <div class="hello-container"><span class="hello">HELLO</span></div>
               <div class="name-container"><span>I am</span> <span class="name">Henry Orozco</span></div>
-              <div class="career">Full-stack Software Engineer</div>
-              <div class="email">alangumer@gmail.com</div>
+              <h4 class="career">Full-stack Software Engineer</h4>
+              <h4 class="email">alangumer@gmail.com</h4>
+              <div>
+                <a href="https://linkedin.com/in/henryalangumer" target="_blank"><img src="../img/linkedin.png" alt="Linkedin profile"></a>
+                &nbsp;&nbsp;
+                <a href="https://github.com/alangumer" target="_blank"><img src="../img/GitHub-Mark-32px.png" alt="Github profile"></a>
+              </div>
             </div>
           </app-header>
 
@@ -223,12 +228,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     _getProject: function() {
       if (this.projects && this._idData && this._idData.id) {
-        for (var i = 0; i < this.projects.length; ++i) {
-          var r = this.projects[i];
-          if (r.id === this._idData.id) {
-            return r;
-          }
+        if ( this._idData.id <= this.projects.length ) {
+          return this.projects[this._idData.id];
         }
+        // for (var i = 0; i < this.projects.length; ++i) {
+        //   var r = this.projects[i];
+        //   if (r.id === this._idData.id) {
+        //     return r;
+        //   }
+        // }
       }
       return null;
     },
