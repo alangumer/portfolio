@@ -97,6 +97,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-weight: 400;
       line-height: 32px;
     }
+    .chips {
+      background-color: #ddd;
+      border-radius: 20px;
+      padding: 10px;
+    }
 
     /* narrow layout */
     @media (max-width: 808px) {
@@ -137,7 +142,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
 
         <section class="main">
-          <p>{{project.description}}</p>
+          <h3>Description</h3>
+          <p id="description"></p>
+          <h3>Technologies</h3>
+          <p>
+            <template is="dom-repeat" items="[[project.technologies]]">
+              <span class="chips">{{item}}</span>
+            </template>
+          </p>
+          <p><a href="{{project.url}}">Link</a></p>
         </section>
       </div>
 
@@ -155,12 +168,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       project: {
         type: Object,
-        observer: '_observeCarousel'
+        observer: '_observeProject'
       }
 
     },
 
-    _observeCarousel(project) {
+    _observeProject(project) {
+      // description
+      this.$.description.innerHTML = project.description;
+
+      // carousel
       var parent = this.$.carouselContainer;
 
       while (Polymer.dom(parent).firstChild) {
@@ -174,6 +191,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         Polymer.dom(carouselElement).setAttribute('draggable',false);
         Polymer.dom(carousel).appendChild(carouselElement);
       })
+
+      Polymer.dom(carousel).setAttribute('dotText',false);
 
       Polymer.dom(parent).appendChild(carousel);
 

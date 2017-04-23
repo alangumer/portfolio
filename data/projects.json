@@ -2,9 +2,11 @@
   {
     "name": "AudioVerse Alexa Skill",
     "company": "AudioVerse",
-    "date": "June 14 2015",
+    "date": "Feb 01 2017",
     "imageUrl": "img/av-alexa/01.png",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
+    "url": "https://www.amazon.com/AudioVerse/dp/B01N35CTO0/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1487610841&sr=1-1&keywords=audioverse",
+    "description": "Development of Alexa Skill for AudioVerse that allows to play the latest, trending and featured sermons from AudioVerse, also play sermons by speaker.<p> Commands:</p>Alexa, ask AudioVerse to play new sermons<br> Alexa, ask AudioVerse to play trending sermons<br> Alexa, ask AudioVerse to play featured sermons<br> Alexa, ask AudioVerse to play sermons by Mark Finley<br> <br> Once is playing the skill allows to shuffle, next, previous, start over or ask to play sermons from a different speaker.</p>",
+    "technologies": ["NodeJS", "Alexa SDK", "AWS"],
     "images": [ "img/av-alexa/01.png" ]
   },
   {
@@ -12,15 +14,19 @@
     "company": "AudioVerse",
     "date": "June 14 2015",
     "imageUrl": "img/av-mum/01.png",
+    "url": "Private",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
-    "images": [ "img/av-mum/01.png", "img/av-mum/02.png" ]
+    "technologies": [],
+    "images": [ "img/av-mum/01.png", "img/av-mum/02.png", "img/av-mum/03.png" ]
   },
   {
     "name": "AudioVerse Android App",
     "company": "AudioVerse",
     "date": "June 14 2015",
     "imageUrl": "img/av-android/01.webp",
+    "url": "",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
+    "technologies": [],
     "images": [ "img/av-android/01.webp", "img/av-android/02.webp", "img/av-android/03.webp", "img/av-android/04.webp", "img/av-android/05.webp" ]
   },
   {
@@ -28,7 +34,49 @@
     "company": "AudioVerse",
     "date": "June 14 2015",
     "imageUrl": "img/av-ios/01.jpeg",
+    "url": "",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
+    "technologies": [],
     "images": [ "img/av-ios/01.jpeg", "img/av-ios/02.jpeg", "img/av-ios/03.jpeg", "img/av-ios/04.jpeg" ]
+  },
+  {
+    "name": "Recording Console",
+    "company": "National Center for State Courts",
+    "date": "June 14 2015",
+    "imageUrl": "img/console/01.png",
+    "url": "Private",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
+    "technologies": [],
+    "images": [ "img/console/01.png" ]
+  },
+  {
+    "name": "Court Management System",
+    "company": "National Center for State Courts",
+    "date": "June 14 2015",
+    "imageUrl": "img/sgt2/index.png",
+    "url": "Private",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
+    "technologies": [],
+    "images": [ "img/sgt2/index.png", "img/sgt2/clasificacion.png", "img/sgt2/busqueda_sujetos.png", "img/sgt2/representacion.png", "img/sgt2/detencion.png", "img/sgt2/sujeto.png", "img/sgt2/audiencia_sujetos.png", "img/sgt2/sentencias.png", "img/sgt2/auth.png" ]
+  },
+  {
+    "name": "Children and Adolescents",
+    "company": "Buckner International",
+    "date": "June 14 2015",
+    "imageUrl": "img/nna/01.png",
+    "url": "Private",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
+    "technologies": [],
+    "images": [ "img/nna/01.png", "img/nna/02.png", "img/nna/03.png", "img/nna/04.png", "img/nna/05.png", "img/nna/06.png" ]
+  },
+  {
+    "name": "Mi Claro",
+    "company": "Claro",
+    "date": "June 14 2015",
+    "imageUrl": "img/miclaro/01.png",
+    "url": "",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa orci, viverra varius ante sodales nec. Vestibulum fringilla tincidunt efficitur. Integer nec urna pretium, tempus quam vitae, semper tellus. Maecenas arcu velit, blandit non tristique vitae, volutpat sit amet elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et nisl sodales, gravida ante eu, posuere lorem. Vestibulum ut sodales sapien. Cras posuere diam neque, at vulputate justo euismod nec. Nam at tristique metus. Integer porttitor ac mi quis consequat. Maecenas tincidunt eget augue eget dictum.",
+    "technologies": [],
+    "images": [ "img/miclaro/01.png" ]
   }
 ]
