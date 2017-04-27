@@ -54,8 +54,8 @@ Custom property | Description | Default
 </dom-module>
 
 <script>
-(function() {
-'use strict';
+(function () {
+  'use strict';
 
   Polymer({
 
@@ -79,19 +79,19 @@ Custom property | Description | Default
       'transitionend': '_onTransitionend'
     },
 
-    created: function() {
+    created: function created() {
       // Used to cancel previous requestAnimationFrame calls when opened changes.
       this.__openedRaf = null;
     },
 
-    attached: function() {
+    attached: function attached() {
       this.opened && this._openedChanged(this.opened);
     },
 
     /**
      * Appends the backdrop to document body if needed.
      */
-    prepare: function() {
+    prepare: function prepare() {
       if (this.opened && !this.parentNode) {
         Polymer.dom(document.body).appendChild(this);
       }
@@ -100,27 +100,27 @@ Custom property | Description | Default
     /**
      * Shows the backdrop.
      */
-    open: function() {
+    open: function open() {
       this.opened = true;
     },
 
     /**
      * Hides the backdrop.
      */
-    close: function() {
+    close: function close() {
       this.opened = false;
     },
 
     /**
      * Removes the backdrop from document body if needed.
      */
-    complete: function() {
+    complete: function complete() {
       if (!this.opened && this.parentNode === document.body) {
         Polymer.dom(this.parentNode).removeChild(this);
       }
     },
 
-    _onTransitionend: function(event) {
+    _onTransitionend: function _onTransitionend(event) {
       if (event && event.target === this) {
         this.complete();
       }
@@ -130,7 +130,7 @@ Custom property | Description | Default
      * @param {boolean} opened
      * @private
      */
-    _openedChanged: function(opened) {
+    _openedChanged: function _openedChanged(opened) {
       if (opened) {
         // Auto-attach.
         this.prepare();
@@ -154,14 +154,11 @@ Custom property | Description | Default
       }
       // Force relayout to ensure proper transitions.
       this.scrollTop = this.scrollTop;
-      this.__openedRaf = window.requestAnimationFrame(function() {
+      this.__openedRaf = window.requestAnimationFrame(function () {
         this.__openedRaf = null;
         this.toggleClass('opened', this.opened);
       }.bind(this));
     }
   });
-
-})();
-
-</script>
+})();</script>
 </body></html>

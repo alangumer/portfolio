@@ -176,84 +176,82 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
 
-  Polymer({
+Polymer({
 
-    is: 'portfolio-app',
+  is: 'portfolio-app',
 
-    properties: {
+  properties: {
 
-      projects: Object,
+    projects: Object,
 
-      _route: Object,
+    _route: Object,
 
-      _subRoute: Object,
+    _subRoute: Object,
 
-      _pageData: {
-        type: Object,
-        observer: '_pageDataChanged'
-      },
+    _pageData: {
+      type: Object,
+      observer: '_pageDataChanged'
+    },
 
-      _selectedPage: String,
+    _selectedPage: String,
 
-      _idData: Object,
+    _idData: Object,
 
-      _scrollPositionMap: {
-        type: Object,
-        value: function() {
-          return {};
-        }
+    _scrollPositionMap: {
+      type: Object,
+      value: function value() {
+        return {};
       }
+    }
 
-    },
+  },
 
-    attached: function() {
-      this.async(function() {
-        if (!this._route.path) {
-          this.set('_route.path', '/home');
-        }
-      });
-    },
-
-    _getProject: function() {
-      if (this.projects && this._idData && this._idData.id) {
-        if ( this._idData.id <= this.projects.length ) {
-          return this.projects[this._idData.id];
-        }
-        // for (var i = 0; i < this.projects.length; ++i) {
-        //   var r = this.projects[i];
-        //   if (r.id === this._idData.id) {
-        //     return r;
-        //   }
-        // }
+  attached: function attached() {
+    this.async(function () {
+      if (!this._route.path) {
+        this.set('_route.path', '/home');
       }
-      return null;
-    },
+    });
+  },
 
-    _drawerSelected: function() {
-      if (!this.$.drawer.persistent) this.$.drawer.close();
-    },
+  _getProject: function _getProject() {
+    if (this.projects && this._idData && this._idData.id) {
+      if (this._idData.id <= this.projects.length) {
+        return this.projects[this._idData.id];
+      }
+      // for (var i = 0; i < this.projects.length; ++i) {
+      //   var r = this.projects[i];
+      //   if (r.id === this._idData.id) {
+      //     return r;
+      //   }
+      // }
+    }
+    return null;
+  },
 
-    /**
-    * Preserves the document scroll position, so
-    * it can be restored when returning to a page.
-    */
-   _pageDataChanged: function(pageData, oldPageData) {
-     var map = this._scrollPositionMap;
+  _drawerSelected: function _drawerSelected() {
+    if (!this.$.drawer.persistent) this.$.drawer.close();
+  },
 
-     if (oldPageData != null && oldPageData.page != null) {
-       map[oldPageData.page] = window.pageYOffset;
-     }
-     this._selectedPage = pageData.page;
-     if (map[pageData.page] != null) {
-       Polymer.AppLayout.scroll({ top: map[pageData.page], behavior: 'silent' });
-     } else if (this.isAttached) {
-       Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });
-     }
-   }
+  /**
+  * Preserves the document scroll position, so
+  * it can be restored when returning to a page.
+  */
+  _pageDataChanged: function _pageDataChanged(pageData, oldPageData) {
+    var map = this._scrollPositionMap;
 
-  });
+    if (oldPageData != null && oldPageData.page != null) {
+      map[oldPageData.page] = window.pageYOffset;
+    }
+    this._selectedPage = pageData.page;
+    if (map[pageData.page] != null) {
+      Polymer.AppLayout.scroll({ top: map[pageData.page], behavior: 'silent' });
+    } else if (this.isAttached) {
+      Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });
+    }
+  }
 
-  </script>
+});</script>
 
 </dom-module>
 </body></html>

@@ -1,0 +1,8 @@
+{
+  "sources": [
+   "src/**/*",
+   "data/**/*",
+   "img/**/*",
+   "bower.json"
+  ]
+}

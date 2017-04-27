@@ -160,54 +160,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
 
-  Polymer({
+Polymer({
 
-    is: 'portfolio-detail',
+  is: 'portfolio-detail',
 
-    properties: {
+  properties: {
 
-      project: {
-        type: Object,
-        observer: '_observeProject'
-      }
-
-    },
-
-    _observeProject(project) {
-      // description
-      this.$.description.innerHTML = project.description;
-
-      // carousel
-      var parent = this.$.carouselContainer;
-
-      while (Polymer.dom(parent).firstChild) {
-        Polymer.dom(parent).removeChild(Polymer.dom(parent).firstChild);
-      }
-
-      var carousel = document.createElement('paper-carousel');
-      project.images.forEach((item) => {
-        var carouselElement = document.createElement('img');
-        Polymer.dom(carouselElement).setAttribute('src',item);
-        Polymer.dom(carouselElement).setAttribute('draggable',false);
-        Polymer.dom(carousel).appendChild(carouselElement);
-      })
-
-      Polymer.dom(carousel).setAttribute('dotText',false);
-
-      Polymer.dom(parent).appendChild(carousel);
-
-      // Polymer.dom(parent).setAttribute('controls',true);
-      // Polymer.dom(parent).setAttribute('dots',true);
-      var self = this;
-      this.async(function() {
-        // self.$.carouselTemplate.render();
-        carousel.refresh();
-      })
+    project: {
+      type: Object,
+      observer: '_observeProject'
     }
 
-  });
+  },
 
-  </script>
+  _observeProject: function _observeProject(project) {
+    // description
+    this.$.description.innerHTML = project.description;
+
+    // carousel
+    var parent = this.$.carouselContainer;
+
+    while (Polymer.dom(parent).firstChild) {
+      Polymer.dom(parent).removeChild(Polymer.dom(parent).firstChild);
+    }
+
+    var carousel = document.createElement('paper-carousel');
+    project.images.forEach(function (item) {
+      var carouselElement = document.createElement('img');
+      Polymer.dom(carouselElement).setAttribute('src', item);
+      Polymer.dom(carouselElement).setAttribute('draggable', false);
+      Polymer.dom(carousel).appendChild(carouselElement);
+    });
+
+    Polymer.dom(carousel).setAttribute('dotText', false);
+
+    Polymer.dom(parent).appendChild(carousel);
+
+    // Polymer.dom(parent).setAttribute('controls',true);
+    // Polymer.dom(parent).setAttribute('dots',true);
+    var self = this;
+    this.async(function () {
+      // self.$.carouselTemplate.render();
+      carousel.refresh();
+    });
+  }
+});</script>
 
 </dom-module>
 </body></html>
