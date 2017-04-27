@@ -1,0 +1,213 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
+<link rel="import" href="../bower_components/paper-menu-button/paper-menu-button.html">
+
+<link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+
+<link rel="import" href="../bower_components/paper-carousel/paper-carousel.html">
+
+</head><body><dom-module id="portfolio-detail">
+
+  <template>
+
+    <style>
+
+    :host {
+      display: block;
+    }
+
+    #header {
+      color: white;
+      background-color: var(--app-primary-color);
+    }
+
+    paper-icon-button {
+      color: white;
+      --paper-icon-button-ink-color: white;
+    }
+
+    .card-container {
+      position: relative;
+      width: 720px;
+      margin: 64px auto 40px;
+      @apply(--shadow-elevation-2dp);
+      background-color: #fff;
+    }
+
+    @media (max-width: 720px) {
+
+      .card-container {
+        width: 100%;
+        margin: 64px 0 0;
+      }
+
+    }
+
+    .image {
+      height: 240px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+    .header {
+      position: relative;
+      padding: 24px 0;
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #999;
+    }
+    .title {
+      padding: 16px 0;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    .main {
+      padding: 24px 80px;
+      border-top: 1px solid #ddd;
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 1px;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 32px;
+    }
+    .chips {
+      background-color: #ddd;
+      border-radius: 20px;
+      padding: 10px;
+    }
+
+    /* narrow layout */
+    @media (max-width: 808px) {
+      .main {
+        padding: 24px;
+      }
+    }
+
+    </style>
+
+    <!-- main panel -->
+    <app-header-layout>
+
+      <app-header id="header" effects="waterfall fade-background" reveals="" slot="header">
+
+        <!-- top toolbar -->
+        <app-toolbar>
+          <!-- back button -->
+          <a href="#/home" tabindex="-1">
+            <paper-icon-button icon="app:arrow-back"></paper-icon-button>
+          </a>
+
+          <div main-title=""></div>
+
+        </app-toolbar>
+
+      </app-header>
+
+      <div class="card-container">
+
+        <!-- <div class="image" style$="background-color: {{project.primaryColor}}; background-image: url('{{project.imageUrl}}')"></div> -->
+        <div id="carouselContainer"></div>
+
+        <div class="header">
+          <div>{{project.author}}</div>
+          <div class="title">{{project.name}}</div>
+          <div>{{project.date}}</div>
+        </div>
+
+        <section class="main">
+          <h3>Description</h3>
+          <p id="description"></p>
+          <h3>Technologies</h3>
+          <p>
+            <template is="dom-repeat" items="[[project.technologies]]">
+              <span class="chips">{{item}}</span>
+            </template>
+          </p>
+          <template is="dom-if" if="{{project.url}}">
+            <p><a href="{{project.url}}">Link {{project.url}}</a></p>
+          </template>
+        </section>
+      </div>
+
+    </app-header-layout>
+
+  </template>
+
+  <script>
+
+  Polymer({
+
+    is: 'portfolio-detail',
+
+    properties: {
+
+      project: {
+        type: Object,
+        observer: '_observeProject'
+      }
+
+    },
+
+    _observeProject(project) {
+      // description
+      this.$.description.innerHTML = project.description;
+
+      // carousel
+      var parent = this.$.carouselContainer;
+
+      while (Polymer.dom(parent).firstChild) {
+        Polymer.dom(parent).removeChild(Polymer.dom(parent).firstChild);
+      }
+
+      var carousel = document.createElement('paper-carousel');
+      project.images.forEach((item) => {
+        var carouselElement = document.createElement('img');
+        Polymer.dom(carouselElement).setAttribute('src',item);
+        Polymer.dom(carouselElement).setAttribute('draggable',false);
+        Polymer.dom(carousel).appendChild(carouselElement);
+      })
+
+      Polymer.dom(carousel).setAttribute('dotText',false);
+
+      Polymer.dom(parent).appendChild(carousel);
+
+      // Polymer.dom(parent).setAttribute('controls',true);
+      // Polymer.dom(parent).setAttribute('dots',true);
+      var self = this;
+      this.async(function() {
+        // self.$.carouselTemplate.render();
+        carousel.refresh();
+      })
+    }
+
+  });
+
+  </script>
+
+</dom-module>
+</body></html>
