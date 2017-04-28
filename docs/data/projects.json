@@ -5,7 +5,7 @@
     "date": "Jan 2017",
     "imageUrl": "img/av-alexa/01.png",
     "url": "https://www.amazon.com/AudioVerse/dp/B01N35CTO0/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1487610841&sr=1-1&keywords=audioverse",
-    "description": "Development of Alexa Skill to play the latest, trending, and featured sermons from AudioVerse, also play sermons by speaker.<p> Commands:</p><ul><li><p> Alexa, ask AudioVerse to play new sermons</p></li><li><p> Alexa, ask AudioVerse to play trending sermons</p></li><li><p> Alexa, ask AudioVerse to play featured sermons</p></li><li><p> Alexa, ask AudioVerse to play sermons by [speaker]</p></li></ul><p> Once the audio is playing, this skill allows it to shuffle, go to next or previous, start over or the user can ask to hear sermons from a different speaker.</p>",
+    "description": "Development of Alexa Skill to play the latest, trending, and featured sermons from AudioVerse, also play sermons by speaker. Commands:<ul><li><p> Alexa, ask AudioVerse to play new sermons</p></li><li><p> Alexa, ask AudioVerse to play trending sermons</p></li><li><p> Alexa, ask AudioVerse to play featured sermons</p></li><li><p> Alexa, ask AudioVerse to play sermons by [speaker]</p></li></ul><p> Once the audio is playing, this skill allows it to shuffle, go to next or previous, start over or the user can ask to hear sermons from a different speaker.</p>",
     "technologies": ["NodeJS", "Alexa SDK", "AWS", "DynamoDB"],
     "images": [ "img/av-alexa/01.png" ]
   },
