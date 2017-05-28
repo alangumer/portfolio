@@ -6,7 +6,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+--><link rel="import" href="../bower_components/polymer/polymer.html">
 
 <link rel="import" href="../bower_components/app-route/app-location.html">
 <link rel="import" href="../bower_components/app-route/app-route.html">
@@ -29,7 +29,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="portfolio-list.html">
 <link rel="import" href="app-icons.html">
 
-</head><body><dom-module id="portfolio-app">
+<dom-module id="portfolio-app">
 
   <template>
 
@@ -176,82 +176,83 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
 
-Polymer({
+  Polymer({
 
-  is: 'portfolio-app',
+    is: 'portfolio-app',
 
-  properties: {
+    properties: {
 
-    projects: Object,
+      projects: Object,
 
-    _route: Object,
+      _route: Object,
 
-    _subRoute: Object,
+      _subRoute: Object,
 
-    _pageData: {
-      type: Object,
-      observer: '_pageDataChanged'
+      _pageData: {
+        type: Object,
+        observer: '_pageDataChanged'
+      },
+
+      _selectedPage: String,
+
+      _idData: Object,
+
+      _scrollPositionMap: {
+        type: Object,
+        value: function() {
+          return {};
+        }
+      }
+
     },
 
-    _selectedPage: String,
+    attached: function() {
+      this.async(function() {
+        if (!this._route.path) {
+          this.set('_route.path', '/home');
+        }
+      });
+    },
 
-    _idData: Object,
-
-    _scrollPositionMap: {
-      type: Object,
-      value: function value() {
-        return {};
+    _getProject: function() {
+      if (this.projects && this._idData && this._idData.id) {
+        if ( this._idData.id <= this.projects.length ) {
+          return this.projects[this._idData.id];
+        }
+        // for (var i = 0; i < this.projects.length; ++i) {
+        //   var r = this.projects[i];
+        //   if (r.id === this._idData.id) {
+        //     return r;
+        //   }
+        // }
       }
-    }
+      return null;
+    },
 
-  },
+    _drawerSelected: function() {
+      if (!this.$.drawer.persistent) this.$.drawer.close();
+    },
 
-  attached: function attached() {
-    this.async(function () {
-      if (!this._route.path) {
-        this.set('_route.path', '/home');
-      }
-    });
-  },
+    /**
+    * Preserves the document scroll position, so
+    * it can be restored when returning to a page.
+    */
+   _pageDataChanged: function(pageData, oldPageData) {
+     var map = this._scrollPositionMap;
 
-  _getProject: function _getProject() {
-    if (this.projects && this._idData && this._idData.id) {
-      if (this._idData.id <= this.projects.length) {
-        return this.projects[this._idData.id];
-      }
-      // for (var i = 0; i < this.projects.length; ++i) {
-      //   var r = this.projects[i];
-      //   if (r.id === this._idData.id) {
-      //     return r;
-      //   }
-      // }
-    }
-    return null;
-  },
+     if (oldPageData != null && oldPageData.page != null) {
+       map[oldPageData.page] = window.pageYOffset;
+     }
+     this._selectedPage = pageData.page;
+     if (map[pageData.page] != null) {
+       Polymer.AppLayout.scroll({ top: map[pageData.page], behavior: 'silent' });
+     } else if (this.isAttached) {
+       Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });
+     }
+   }
 
-  _drawerSelected: function _drawerSelected() {
-    if (!this.$.drawer.persistent) this.$.drawer.close();
-  },
+  });
 
-  /**
-  * Preserves the document scroll position, so
-  * it can be restored when returning to a page.
-  */
-  _pageDataChanged: function _pageDataChanged(pageData, oldPageData) {
-    var map = this._scrollPositionMap;
-
-    if (oldPageData != null && oldPageData.page != null) {
-      map[oldPageData.page] = window.pageYOffset;
-    }
-    this._selectedPage = pageData.page;
-    if (map[pageData.page] != null) {
-      Polymer.AppLayout.scroll({ top: map[pageData.page], behavior: 'silent' });
-    } else if (this.isAttached) {
-      Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });
-    }
-  }
-
-});</script>
+  </script>
 
 </dom-module>
-</body></html>

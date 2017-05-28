@@ -6,7 +6,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><html><head><link rel="import" href="../polymer/polymer.html">
+--><link rel="import" href="../polymer/polymer.html">
 
 <!--
 `iron-meta` is a generic element you can use for sharing information across the DOM tree.
@@ -51,148 +51,148 @@ Or, in a Polymer element, you can include a meta in your template:
 
 <script>
 
-(function () {
+  (function() {
 
-  function IronMeta(options) {
-    this.type = options && options.type || 'default';
-    this.key = options && options.key;
-    if ('value' in options) {
-      this.value = options.value;
-    }
-  }
-
-  IronMeta.types = {};
-
-  IronMeta.prototype = {
-    get value() {
-      var type = this.type;
-      var key = this.key;
-
-      if (type && key) {
-        return IronMeta.types[type] && IronMeta.types[type][key];
+    function IronMeta(options) {
+      this.type = (options && options.type) || 'default';
+      this.key = options && options.key;
+      if ('value' in options) {
+        this.value = options.value;
       }
-    },
+    }
 
-    set value(value) {
-      var type = this.type;
-      var key = this.key;
+    IronMeta.types = {};
 
-      if (type && key) {
-        var type = IronMeta.types[type] = IronMeta.types[type] || {};
-        if (value == null) {
-          delete type[key];
-        } else {
-          type[key] = value;
+    IronMeta.prototype = {
+      get value() {
+        var type = this.type;
+        var key = this.key;
+
+        if (type && key) {
+          return IronMeta.types[type] && IronMeta.types[type][key];
         }
+      },
+
+      set value(value) {
+        var type = this.type;
+        var key = this.key;
+
+        if (type && key) {
+          var type = IronMeta.types[type] = IronMeta.types[type] || {};
+          if (value == null) {
+            delete type[key];
+          } else {
+            type[key] = value;
+          }
+        }
+      },
+
+      get list() {
+        var type = this.type;
+
+        if (type) {
+          return Object.keys(IronMeta.types[this.type]).map(function(key) {
+            return metaDatas[this.type][key];
+          }, this);
+        }
+      },
+
+      byKey(key) {
+        this.key = key;
+        return this.value;
       }
-    },
+    };
 
-    get list() {
-      var type = this.type;
+    Polymer.IronMeta = IronMeta;
 
-      if (type) {
-        return Object.keys(IronMeta.types[this.type]).map(function (key) {
-          return metaDatas[this.type][key];
-        }, this);
-      }
-    },
+    var metaDatas = Polymer.IronMeta.types;
 
-    byKey: function byKey(key) {
-      this.key = key;
-      return this.value;
-    }
-  };
+    Polymer({
 
-  Polymer.IronMeta = IronMeta;
+      is: 'iron-meta',
 
-  var metaDatas = Polymer.IronMeta.types;
+      properties: {
 
-  Polymer({
+        /**
+         * The type of meta-data.  All meta-data of the same type is stored
+         * together.
+         */
+        type: {
+          type: String,
+          value: 'default',
+        },
 
-    is: 'iron-meta',
+        /**
+         * The key used to store `value` under the `type` namespace.
+         */
+        key: {
+          type: String,
+        },
 
-    properties: {
+        /**
+         * The meta-data to store or retrieve.
+         */
+        value: {
+          type: String,
+          notify: true,
+        },
 
-      /**
-       * The type of meta-data.  All meta-data of the same type is stored
-       * together.
-       */
-      type: {
-        type: String,
-        value: 'default'
+        /**
+         * If true, `value` is set to the iron-meta instance itself.
+         */
+         self: {
+          type: Boolean,
+          observer: '_selfChanged'
+        },
+
+        __meta: {
+          type: Boolean,
+          computed: '__computeMeta(type, key, value)'
+        }
+      },
+
+      hostAttributes: {
+        hidden: true
+      },
+
+      __computeMeta: function(type, key, value) {
+        let meta = new Polymer.IronMeta({
+          type: type,
+          key: key
+        });
+
+        if (value !== undefined && value !== meta.value) {
+          meta.value = value;
+        } else if (this.value !== meta.value) {
+          this.value = meta.value;
+        }
+
+        return meta;
+      },
+
+      get list() {
+        return this.__meta && this.__meta.list;
+      },
+
+      _selfChanged: function(self) {
+        if (self) {
+          this.value = this;
+        }
       },
 
       /**
-       * The key used to store `value` under the `type` namespace.
+       * Retrieves meta data value by key.
+       *
+       * @method byKey
+       * @param {string} key The key of the meta-data to be returned.
+       * @return {*}
        */
-      key: {
-        type: String
-      },
-
-      /**
-       * The meta-data to store or retrieve.
-       */
-      value: {
-        type: String,
-        notify: true
-      },
-
-      /**
-       * If true, `value` is set to the iron-meta instance itself.
-       */
-      self: {
-        type: Boolean,
-        observer: '_selfChanged'
-      },
-
-      __meta: {
-        type: Boolean,
-        computed: '__computeMeta(type, key, value)'
+      byKey: function(key) {
+        return new Polymer.IronMeta({
+          type: this.type,
+          key: key
+        }).value;
       }
-    },
-
-    hostAttributes: {
-      hidden: true
-    },
-
-    __computeMeta: function __computeMeta(type, key, value) {
-      var meta = new Polymer.IronMeta({
-        type: type,
-        key: key
-      });
-
-      if (value !== undefined && value !== meta.value) {
-        meta.value = value;
-      } else if (this.value !== meta.value) {
-        this.value = meta.value;
-      }
-
-      return meta;
-    },
-
-    get list() {
-      return this.__meta && this.__meta.list;
-    },
-
-    _selfChanged: function _selfChanged(self) {
-      if (self) {
-        this.value = this;
-      }
-    },
-
-    /**
-     * Retrieves meta data value by key.
-     *
-     * @method byKey
-     * @param {string} key The key of the meta-data to be returned.
-     * @return {*}
-     */
-    byKey: function byKey(key) {
-      return new Polymer.IronMeta({
-        type: this.type,
-        key: key
-      }).value;
-    }
-  });
-})();</script>
-</head><body></body></html>
+    });
+  })();
+</script>
