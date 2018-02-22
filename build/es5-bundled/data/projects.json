@@ -1,0 +1,97 @@
+[
+  {
+    "name": "Portfolio",
+    "company": "Personal",
+    "date": "May 2017",
+    "imageUrl": "img/portfolio/01.png",
+    "url": "https://alangumer.github.io/portfolio/",
+    "description": "I developed my portfolio using Google polymer project. I was especially interested in playing with and establishing the architecture of the application using just web components and the features that it offers like: HTML imports, Custom Elements, Shadow DOM, and HTML templates.",
+    "technologies": ["Polymer", "Bower"],
+    "images": [ "img/portfolio/01.png", "img/portfolio/02.png" ]
+  },
+  {
+    "name": "Dinosaur Museum",
+    "company": "Southern Adventist University",
+    "date": "March 2017",
+    "imageUrl": "img/dino/01.png",
+    "url": "https://eclasscontent.southern.edu/dino/",
+    "description": "Developed Online Dinosaur Museum with AngularJS, bootstrap for Southern Adventist University. This project includes six modules, each of which contains a video divided in sections, and is followed by interactives like quizzes or drag and drop activities to reinforce the knowledge just acquired.",
+    "technologies": ["AngularJS", "Bootstrap"],
+    "images": [ "img/dino/01.png", "img/dino/02.png", "img/dino/03.png", "img/dino/04.png", "img/dino/05.png", "img/dino/06.png", "img/dino/07.png", "img/dino/08.png", "img/dino/09.png" ]
+  },
+  {
+    "name": "AudioVerse Alexa Skill",
+    "company": "AudioVerse",
+    "date": "Jan 2017",
+    "imageUrl": "img/av-alexa/01.png",
+    "url": "https://www.amazon.com/AudioVerse/dp/B01N35CTO0/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1487610841&sr=1-1&keywords=audioverse",
+    "description": "Development of Alexa Skill to play the latest, trending, and featured sermons from AudioVerse, and play sermons by speaker. Commands:<ul><li><p> Alexa, ask AudioVerse to play new sermons</p></li><li><p> Alexa, ask AudioVerse to play trending sermons</p></li><li><p> Alexa, ask AudioVerse to play featured sermons</p></li><li><p> Alexa, ask AudioVerse to play sermons by [speaker]</p></li></ul><p> Once the audio is playing, this skill allows it to shuffle, go to next or previous, start over or the user can ask to hear sermons from a different speaker.</p>",
+    "technologies": ["NodeJS", "Alexa SDK", "AWS", "DynamoDB"],
+    "images": [ "img/av-alexa/01.png" ]
+  },
+  {
+    "name": "Media Upload Manager",
+    "company": "AudioVerse",
+    "date": "June 2016",
+    "imageUrl": "img/av-mum/01.png",
+    "description": "Internal tool developed to manage all the media file uploads to our server. This tool was integrated in the admin application and works as a standalone app. It was developed to allow multi-uploads of large files.<p> The backend is a vanilla Node.js application that provide the API for create, rename and delete files and folders also provide a service for streaming multi-uploads. The front-end was developed in React with server side rendering and hot module reloading through Webpack, for the UI was used React Components implementing Google&#39;s Material Design, Babel for ES6 support, webpack for bundling, Redux to manage the app state, ESLint to maintain a consistent code style and mocha to allow writing unit tests.</p>",
+    "technologies": ["NodeJS", "Skipper", "React", "Redux", "Webpack", "ES6", "ESLint", "Mocha" ],
+    "images": [ "img/av-mum/01.png", "img/av-mum/02.png", "img/av-mum/03.png" ]
+  },
+  {
+    "name": "AudioVerse Android App",
+    "company": "AudioVerse",
+    "date": "Sep 2016",
+    "imageUrl": "img/av-android/01.webp",
+    "url": "https://play.google.com/store/apps/details?id=org.audioverse.exodus&hl=en",
+    "description": "AudioVerse is a website dedicated to spreading God's word through free sermon audio. The AudioVerse App allows access to a vast library of sermons, seminars, lectures, and audio books.<p> Improved Features:</p><ul><li><p> Download your favorite messages to listen to later--even without an Internet connection.</p></li><li><p> Share your favorite sermon through various social media outlets.</p></li><li><p> Listen to Audio Bible and Audio Books.</p></li></ul><p> New Features added:</p><ul><li><p> Facebook and Google+ login</p></li><li><p> Synchronize and manage favorites and playlists</p></li><li><p> Stream video presentations (when available)</p></li><li><p> Additional sponsors and series.</p></li></ul>",
+    "technologies": ["JavaScript", "Titanium", "SQLite"],
+    "images": [ "img/av-android/01.webp", "img/av-android/02.webp", "img/av-android/03.webp", "img/av-android/04.webp", "img/av-android/05.webp" ]
+  },
+  {
+    "name": "AudioVerse iOS App",
+    "company": "AudioVerse",
+    "date": "July 2016",
+    "imageUrl": "img/av-ios/01.jpeg",
+    "url": "https://itunes.apple.com/us/app/audioverse/id726998810?mt=8",
+    "description": "AudioVerse is a website dedicated to spreading God's word through free sermon audio. The AudioVerse App allows access to a vast library of sermons, seminars, lectures, and audio books.<p> Improved Features:</p><ul><li><p> Download your favorite messages to listen to later--even without an Internet connection.</p></li><li><p> Share your favorite sermon through various social media outlets.</p></li><li><p> Listen to Audio Bible and Audio Books.</p></li></ul><p> New Features added:</p><ul><li><p> Facebook and Google+ login</p></li><li><p> Synchronize and manage favorites and playlists</p></li><li><p> Stream video presentations (when available)</p></li><li><p> Listen to presentations at faster speeds</p></li><li><p> Additional sponsors and series.</p></li></ul>",
+    "technologies": ["JavaScript", "Titanium", "SQLite"],
+    "images": [ "img/av-ios/01.jpeg", "img/av-ios/02.jpeg", "img/av-ios/03.jpeg", "img/av-ios/04.jpeg" ]
+  },
+  {
+    "name": "Recording Console",
+    "company": "National Center for State Courts",
+    "date": "May 2016",
+    "imageUrl": "img/console/01.png",
+    "description": "Development of recording console to record court hearings in multiple tribunals; hearings are streamed and recorded on the central server and each participant and their role is stored in the database to know what person spoke at any given time.<p> The backend is a NodeJS application that provides the real time binary streaming using websockets and encodes the binary data into WAV/MP3 files; the frontend was developed in AngularJS.</p>",
+    "technologies": ["NodeJS", "BinaryJS", "Websockets", "AngularJS", "RESTful"],
+    "images": [ "img/console/01.png" ]
+  },
+  {
+    "name": "Court Management System",
+    "company": "National Center for State Courts",
+    "date": "June 2015 - May 2016",
+    "imageUrl": "img/sgt2/index.png",
+    "description": "Consulting and Development of the Court Management System of Guatemala that tracks and records information dealing with court cases, from the first instance that a case is reported, to tracking information leading up to, and recording of the court hearing.<p> My role was to collaborate in defining the application&rsquo;s architecture. I led the front-end development using AngularJS, Bootstrap, SASS, Gulp, Bower and interacting with the RESTful APIs.</p><p> When the development team saw the benefits of the technologies I was using on the web application, my boss asked me to train the team on those technologies and to put together a boilerplate which they used to develop other applications.</p><p> Besides the technology I found this project especially meaningful, because the end result was a system that facilitates the execution of justice in my country, in a timely manner.</p>",
+    "technologies": ["AngularJS", "Gulp", "Bower", "Bootstrap", "SASS", "OAuth", "RESTful"],
+    "images": [ "img/sgt2/index.png", "img/sgt2/clasificacion.png", "img/sgt2/busqueda_sujetos.png", "img/sgt2/representacion.png", "img/sgt2/detencion.png", "img/sgt2/sujeto.png", "img/sgt2/audiencia_sujetos.png", "img/sgt2/sentencias.png", "img/sgt2/auth.png" ]
+  },
+  {
+    "name": "Children and Adolescents",
+    "company": "Buckner International",
+    "date": "August 2014 - May 2015",
+    "imageUrl": "img/nna/01.png",
+    "description": "Collaborated with organizations Buckner International and Tyler Technologies to develop and implement control systems for court cases relating to the protection of children and adolescents in conflict with the law; the system allows the courts of Guatemala to have a centralized database with all the information about the children and adolescents like pictures, fingerprints, the places they have been before, guardian information, foster families, orphans, etc. The system allows the courts to search, identify, and track the children and adolescents and make better decisions regarding the future of the children.<p> My role was to collaborate in defining the database model, application mockups, and application architecture. I led the front-end development using AngularJS and bootstrap, interacting with the RESTful APIs and the integration of the Java Applet to interact with a fingerprint device.</p>",
+    "technologies": ["AngularJS", "Bootstrap", "RESTful"],
+    "images": [ "img/nna/01.png", "img/nna/02.png", "img/nna/03.png", "img/nna/04.png", "img/nna/05.png", "img/nna/06.png" ]
+  },
+  {
+    "name": "Mi Claro",
+    "company": "Claro",
+    "date": "Feb 2014 - June 2014",
+    "imageUrl": "img/miclaro/01.png",
+    "description": "Developed Java Websphere Application for the payment of services, invoicing, and purchase of prepaid airtime for telecommunications group Claro.",
+    "technologies": ["JavaEE", "Websphere", "JavaScript", "Portlets"],
+    "images": [ "img/miclaro/01.png", "img/miclaro/02.png", "img/miclaro/03.png", "img/miclaro/04.png" ]
+  }
+]
