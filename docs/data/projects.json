@@ -42,21 +42,21 @@
     "name": "AudioVerse Android App",
     "company": "AudioVerse",
     "date": "Sep 2016",
-    "imageUrl": "img/av-android/01.webp",
+    "imageUrl": "img/av-android/01.jpg",
     "url": "https://play.google.com/store/apps/details?id=org.audioverse.exodus&hl=en",
     "description": "AudioVerse is a website dedicated to spreading God's word through free sermon audio. The AudioVerse App allows access to a vast library of sermons, seminars, lectures, and audio books.<p> Improved Features:</p><ul><li><p> Download your favorite messages to listen to later--even without an Internet connection.</p></li><li><p> Share your favorite sermon through various social media outlets.</p></li><li><p> Listen to Audio Bible and Audio Books.</p></li></ul><p> New Features added:</p><ul><li><p> Facebook and Google+ login</p></li><li><p> Synchronize and manage favorites and playlists</p></li><li><p> Stream video presentations (when available)</p></li><li><p> Additional sponsors and series.</p></li></ul>",
-    "technologies": ["JavaScript", "Titanium", "SQLite"],
-    "images": [ "img/av-android/01.webp", "img/av-android/02.webp", "img/av-android/03.webp", "img/av-android/04.webp", "img/av-android/05.webp" ]
+    "technologies": ["JavaScript", "Titanium", "SQLite", "Android Studio"],
+    "images": [ "img/av-android/01.jpg", "img/av-android/02.jpg", "img/av-android/03.jpg", "img/av-android/04.jpg", "img/av-android/05.jpg" ]
   },
   {
     "name": "AudioVerse iOS App",
     "company": "AudioVerse",
     "date": "July 2016",
-    "imageUrl": "img/av-ios/01.jpeg",
+    "imageUrl": "img/av-ios/01.png",
     "url": "https://itunes.apple.com/us/app/audioverse/id726998810?mt=8",
     "description": "AudioVerse is a website dedicated to spreading God's word through free sermon audio. The AudioVerse App allows access to a vast library of sermons, seminars, lectures, and audio books.<p> Improved Features:</p><ul><li><p> Download your favorite messages to listen to later--even without an Internet connection.</p></li><li><p> Share your favorite sermon through various social media outlets.</p></li><li><p> Listen to Audio Bible and Audio Books.</p></li></ul><p> New Features added:</p><ul><li><p> Facebook and Google+ login</p></li><li><p> Synchronize and manage favorites and playlists</p></li><li><p> Stream video presentations (when available)</p></li><li><p> Listen to presentations at faster speeds</p></li><li><p> Additional sponsors and series.</p></li></ul>",
-    "technologies": ["JavaScript", "Titanium", "SQLite"],
-    "images": [ "img/av-ios/01.jpeg", "img/av-ios/02.jpeg", "img/av-ios/03.jpeg", "img/av-ios/04.jpeg" ]
+    "technologies": ["JavaScript", "Titanium", "SQLite", "XCode"],
+    "images": [ "img/av-ios/01.png", "img/av-ios/02.png", "img/av-ios/03.png", "img/av-ios/04.png", "img/av-ios/05.png" ]
   },
   {
     "name": "Recording Console",
