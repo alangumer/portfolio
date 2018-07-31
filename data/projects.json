@@ -1,11 +1,21 @@
 [
   {
+    "name": "AudioVerse React Native",
+    "company": "AudioVerse",
+    "date": "May 2018",
+    "imageUrl": "img/av-mobile/01.gif",
+    "url": "https://alangumer.github.io/portfolio/",
+    "description": "Next generation iOS and Android apps for AudioVerse in React Native.",
+    "technologies": ["react-native", "redux", "redux-saga", "react-native-i18n", "react-native-track-player", "react-navigation"],
+    "images": [ "img/av-mobile/01.gif" ]
+  },
+  {
     "name": "Portfolio",
     "company": "Personal",
     "date": "May 2017",
     "imageUrl": "img/portfolio/01.png",
     "url": "https://alangumer.github.io/portfolio/",
-    "description": "I developed my portfolio using Google polymer project. I was especially interested in playing with and establishing the architecture of the application using just web components and the features that it offers like: HTML imports, Custom Elements, Shadow DOM, and HTML templates.",
+    "description": "Developed my portfolio using Google polymer project. I was especially interested in playing with and establishing the architecture of the application using just web components and the features that it offers like: HTML imports, Custom Elements, Shadow DOM, and HTML templates.",
     "technologies": ["Polymer", "Bower"],
     "images": [ "img/portfolio/01.png", "img/portfolio/02.png" ]
   },
