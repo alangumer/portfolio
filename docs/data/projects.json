@@ -7,7 +7,7 @@
     "url": "https://github.com/avorg/audioverse-mobile",
     "description": "Next generation iOS and Android apps for AudioVerse in React Native.",
     "technologies": ["react-native", "redux", "redux-saga", "react-native-i18n", "react-native-track-player", "react-navigation"],
-    "images": [ "img/av-mobile/01.gif", "img/av-mobile/01.gif" ]
+    "images": [ "img/av-mobile/01.gif" ]
   },
   {
     "name": "Portfolio",
